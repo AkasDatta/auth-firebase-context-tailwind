@@ -31,16 +31,16 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered bg-gray-500" required/>
-                            {/* <label className="label">
+                            <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label> */}
+                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
-                        <Link to="/register">
-                            <button className="btn btn-active btn-link">New to Auth Master</button>
-                        </Link>
+                        <label className="label">
+                            <Link to="/register" className="label-text-alt link link-hover">New to Auth Master? Please Register</Link>
+                        </label>
                     </form>
                 </div>
             </div>
