@@ -6,7 +6,9 @@ const Home = () => {
     console.log(user);
     return (
         <div>
-            <h2>This is Home {user && <span>{user.displayName}</span>}</h2>
+            <h2>This is Home {user && 
+                <span>{user.displayName}</span>}
+            </h2>
         </div>
     );
 };

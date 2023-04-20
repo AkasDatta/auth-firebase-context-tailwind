@@ -4,7 +4,7 @@ import { AuthContext } from '../providers/AuthProviders';
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext);
+    const { signIn, signInWithGoogle } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -15,14 +15,15 @@ const Login = () => {
         console.log(email, password);
 
         signIn(email, password)
-            .then (result => {
+            .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                form.reset();
             })
             .catch(error => {
-                console.log(error);
+                console.log(error)
             })
-    } 
+    }
 
     return (
         <div className="hero min-h-screen bg-green-100">

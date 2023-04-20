@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App'
+import App from './App'
 import './index.css'
 import {
   createBrowserRouter,
@@ -11,6 +11,8 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import AuthProviders from './providers/AuthProviders';
+import Orders from './components/Orders';
+import PrivateRoute from './routes/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
-      },
+      }, 
       {
         path: '/login',
         element: <Login></Login>
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/orders',
+        element: <PrivateRoute><Orders></Orders></PrivateRoute>
       }
     ]
   },
