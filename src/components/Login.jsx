@@ -25,6 +25,17 @@ const Login = () => {
             })
     }
 
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .error(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <div className="hero min-h-screen bg-green-100">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -55,6 +66,9 @@ const Login = () => {
                             <Link to="/register" className="label-text-alt link link-hover">New to Auth Master? Please Register</Link>
                         </label>
                     </form>
+                    <div>
+                        <button onClick={handleGoogleSignIn} className="btn btn-active btn-primary">Google</button>
+                    </div>
                 </div>
             </div>
         </div>
